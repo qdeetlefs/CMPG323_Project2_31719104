@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using ImageGallery.Data.Models;
 
-namespace CMPG323_Project2.Models
+namespace ImageGallery.Services
 {
-    class ImageGalleryDbContext: DbContext
+    public class ImageGalleryDbContext: DbContext
     {
 
         public ImageGalleryDbContext(DbContextOptions options) : base(options)

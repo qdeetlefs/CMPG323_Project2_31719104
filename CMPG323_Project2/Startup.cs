@@ -1,5 +1,8 @@
+using CMPG323_Project2.Infrastructures;
 using CMPG323_Project2.Models;
+using ImageGallery.Data;
 using ImageGallery.Data.Models;
+using ImageGallery.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +31,8 @@ namespace CMPG323_Project2
             services.AddControllersWithViews();
             services.AddDbContext<ImageGalleryDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<ICloudinaryImageUpload, CloudinaryImageUpload>();
 
         }
 
@@ -53,7 +57,7 @@ namespace CMPG323_Project2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Gallery}/{action=Index}/{id?}");
             });
         }
     }
