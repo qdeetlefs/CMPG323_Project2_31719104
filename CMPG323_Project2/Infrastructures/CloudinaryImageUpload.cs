@@ -2,7 +2,7 @@
 using CloudinaryDotNet.Actions;
 using CMPG323_Project2.Models;
 using ImageGallery.Data.Models;
-using ImageGallery.Services;
+using ImageGallery.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -21,17 +21,21 @@ namespace CMPG323_Project2.Infrastructures
         private string Cloud { get; set; }
         private Account Account { get; set; }
 
+
         private readonly IConfiguration configuration;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ImageGalleryDbContext _ctx;
 
-        public CloudinaryImageUpload(IConfiguration configuration, IWebHostEnvironment webHostEnvironment,ImageGalleryDbContext ctx)
+        public CloudinaryImageUpload(IConfiguration configuration, IWebHostEnvironment webHostEnvironment,
+            ImageGalleryDbContext ctx)
         {
-
-        }
-        public CloudinaryImageUpload()
-        {
-
+            this.ApiKey = configuration["Cloudinary:ApiKey"];
+            this.ApiSecret = configuration["Cloudinary:ApiSecret"];
+            this.Cloud = configuration["Cloudinary:Cloud"];
+            this.Account = new Account { ApiKey = this.ApiKey, ApiSecret = this.ApiSecret, Cloud = this.Cloud };
+            this.configuration = configuration;
+            _webHostEnvironment = webHostEnvironment;
+            _ctx = ctx;
         }
 
         public async Task<string> UploadPicture(UploadImageModel model)
@@ -82,12 +86,15 @@ namespace CMPG323_Project2.Infrastructures
      
 
 
-        private List<ImageTag> ParseTags(string tags)
+        private List<ImageTag> ParseTags(string tags) 
         {
             return tags.Split(",").Select(tag => new ImageTag
             {
-                Description = tag
+                Description = tag,
+
             }).ToList();
+
+           
 
         }
     }

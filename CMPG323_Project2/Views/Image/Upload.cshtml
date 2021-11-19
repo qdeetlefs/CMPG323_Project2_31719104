@@ -1,20 +1,22 @@
 ﻿@model CMPG323_Project2.Models.UploadImageModel
 
+
+
 <div class="container body-content">
     <div class="row upload-container">
         <div class="upload-form drop-shadow">
 
-            <form asp-action="UploadNewImage" method="post" ecotype="multipart/form-data" id="upload-form">
-                <table border="0" cellpadding="2" cellspacing="2">
+            <form asp-action="UploadNewImage" method="post" enctype="multipart/form-data" id="upload-form">
+                <table style= "width: 100%" border="0" cellpadding="10" cellspacing="5">
                     <tr>
                         <td>Title</td>
                         <td>
                             <input asp-for="Title" />
                         </td>
                     </tr>
-
+                    
                     <tr>
-                        <td>Tags</td>
+                        <td>Description Tags</td>
                         <td>
                             <input asp-for="Tags" />
                         </td>

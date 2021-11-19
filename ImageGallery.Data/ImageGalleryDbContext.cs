@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ImageGallery.Data.Models;
 
-namespace ImageGallery.Services
+namespace ImageGallery.Data
 {
     public class ImageGalleryDbContext: DbContext
     {
