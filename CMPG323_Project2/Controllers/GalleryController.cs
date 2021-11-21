@@ -82,12 +82,18 @@ namespace CMPG323_Project2.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var images = await _ctx.GalleryImages.FindAsync(id);
-
-            if (images.Url != null)
+            try
             {
-                _ctx.GalleryImages.Remove(images);
-                await _ctx.SaveChangesAsync();
+                if (images.Url != null)
+                {
+                    _ctx.GalleryImages.Remove(images);
+                    await _ctx.SaveChangesAsync();
+                }
+            }catch(Exception)
+            {
+                throw;
             }
+            
             
             return RedirectToAction(nameof(Index));
         }
