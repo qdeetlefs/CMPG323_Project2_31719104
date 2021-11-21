@@ -18,7 +18,7 @@ namespace CMPG323_Project2.Controllers
             _imageUpload = imageUpload;
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult Upload()
         {
             var model = new UploadImageModel();
