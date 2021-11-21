@@ -1,5 +1,6 @@
 ﻿using CMPG323_Project2.Infrastructures;
 using CMPG323_Project2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace CMPG323_Project2.Controllers
             _imageUpload = imageUpload;
         }
 
+        [Authorize]
         public IActionResult Upload()
         {
             var model = new UploadImageModel();

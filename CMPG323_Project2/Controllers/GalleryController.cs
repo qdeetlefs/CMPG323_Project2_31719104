@@ -22,13 +22,29 @@ namespace CMPG323_Project2.Controllers
         public IActionResult Index()
         {
             var imageList = _iImageService.GetAll();
-
             var model = new GalleryIndexModel()
             {
                 Images = imageList,
                 SearchQuery = ""
             };
             return View(model);
+
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var image = _iImageService.GetById(id);
+            var model = new GalleryDetailModel()
+            {
+                Id = image.Id,
+                Created = image.Created,
+                Url = image.Url,
+                Title = image.Title,
+                Tags = image.Tags.Select(x => x.Description).ToList()
+            };
+
+            return View(model);
+
 
         }
     }

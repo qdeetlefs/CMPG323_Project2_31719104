@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CMPG323_Project2</title>
+    <title>@ViewData["Title"] - CMPG323 Project 2</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -17,6 +17,16 @@
                         <li><a asp-controller="Image" asp-action="Upload">Upload</a></li>
                     </ul>
                 </div>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a id="qsLogoutBtn" asp-controller="Account" asp-action="LogOut">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a id="qsLoginBtn" asp-controller="Account" asp-action="Login">Login</a></li>
+                    }
+                </ul>
             </div>
         </nav>
     </header>
@@ -28,7 +38,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - CMPG323_Project2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - CMPG323 Project 2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
