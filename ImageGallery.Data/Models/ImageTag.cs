@@ -10,11 +10,5 @@ namespace ImageGallery.Data.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
-
-        public string Geolocation { get; set; }
-
-        public DateTime CaptureDate { get; set; }
-
-        public string CapturedBy { get; set; }
     }
 }

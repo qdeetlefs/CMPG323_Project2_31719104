@@ -14,6 +14,12 @@ namespace CMPG323_Project2.Models
         [FileExtensions(Extensions = "bmp,ico,jpeg,jpg,gif,tiff,png")]
         public IFormFile UploadImage { get; set; }
 
+        public string Geolocation { get; set; }
+
+        public DateTime CapturedDate { get; set; }
+
+        public string CapturedBy { get; set; }
+
         public string Tags { get; set; }
 
     }

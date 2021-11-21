@@ -13,6 +13,12 @@ namespace ImageGallery.Data.Models
         public DateTime Created { get; set; }
         public string Url { get; set; }
 
+        public string Geolocation { get; set; }
+
+        public DateTime CapturedDate { get; set; }
+
+        public string CapturedBy { get; set; }
+
         public virtual IEnumerable<ImageTag> Tags { get; set; }
     }
 }

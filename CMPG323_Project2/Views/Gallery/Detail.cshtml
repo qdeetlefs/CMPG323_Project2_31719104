@@ -7,11 +7,15 @@
         </div>
     </div>
     <div class="row image-detail-meta">
-        <span> Title: @Model.Title</span>
-        <span> Uploaded: @Model.Created</span>
+        <span> Title: @Model.Title &nbsp;</span>
+        <span> Uploaded: @Model.Created &nbsp;</span>
+        <span> Geolocation: @Model.Geolocation &nbsp;</span>
+        <span> Captured date: @Model.CapturedDate &nbsp;</span>
+        <span> Captured by: @Model.CapturedBy </span>
     </div>
     <div class="row controlls">
         <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">Back To Gallery</a>
+
     </div>
 
 </div>

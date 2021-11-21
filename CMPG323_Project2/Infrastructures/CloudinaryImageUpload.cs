@@ -74,7 +74,10 @@ namespace CMPG323_Project2.Infrastructures
                 Title = model.Title,
                 Created = DateTime.Now,
                 Url = uploadResult.Url.AbsoluteUri,
-                Tags = ParseTags(model.Tags)
+                Tags = ParseTags(model.Tags),
+                Geolocation = model.Geolocation,
+                CapturedBy = model.CapturedBy,
+                CapturedDate = model.CapturedDate
 
             };
             _ctx.Add(image);

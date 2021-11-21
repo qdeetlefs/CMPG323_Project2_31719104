@@ -40,12 +40,17 @@ namespace CMPG323_Project2.Controllers
                 Created = image.Created,
                 Url = image.Url,
                 Title = image.Title,
-                Tags = image.Tags.Select(x => x.Description).ToList()
+                Tags = image.Tags.Select(x => x.Description).ToList(),
+                Geolocation = image.Geolocation,
+                CapturedBy = image.CapturedBy,
+                CapturedDate = image.CapturedDate
             };
 
             return View(model);
 
 
         }
+
+
     }
 }

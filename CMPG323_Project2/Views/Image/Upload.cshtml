@@ -7,18 +7,36 @@
         <div class="upload-form drop-shadow">
 
             <form asp-action="UploadNewImage" method="post" enctype="multipart/form-data" id="upload-form">
-                <table style= "width: 100%" border="0" cellpadding="10" cellspacing="5">
+                <table style="width: 100%" border="0" cellpadding="10" cellspacing="5">
                     <tr>
                         <td>Title</td>
                         <td>
                             <input asp-for="Title" />
                         </td>
                     </tr>
-                    
+
                     <tr>
-                        <td>Description Tags</td>
+                        <td>Tag</td>
                         <td>
                             <input asp-for="Tags" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geolocation</td>
+                        <td>
+                            <input asp-for="Geolocation" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Capture date</td>
+                        <td>
+                            <input asp-for="CapturedDate" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Captured by</td>
+                        <td>
+                            <input asp-for="CapturedBy" />
                         </td>
                     </tr>
                     <tr>
