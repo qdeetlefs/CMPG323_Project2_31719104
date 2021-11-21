@@ -22,5 +22,6 @@ namespace CMPG323_Project2.Models
         public string CapturedBy { get; set; }
 
         public List<string> Tags { get; set; }
+
     }
 }

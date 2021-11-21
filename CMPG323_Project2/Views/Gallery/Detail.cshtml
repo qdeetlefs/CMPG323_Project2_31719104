@@ -14,8 +14,11 @@
         <span> Captured by: @Model.CapturedBy </span>
     </div>
     <div class="row controlls">
-        <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">Back To Gallery</a>
-
+        <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">Back To Gallery </a>
+        &nbsp;
+        <a class="btn btn-primary" asp-controller="Gallery" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+        &nbsp;
+        <a class="btn btn-primary" asp-controller="Gallery" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
     </div>
 
 </div>
